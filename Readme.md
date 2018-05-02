@@ -1,4 +1,4 @@
-Clearet
+d-clearet
 ==============
 
 A little tool for removing files based on their retention period. The retention period is given via the extension of the file.

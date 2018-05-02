@@ -1,17 +1,16 @@
 import platform
-from file_helper import FileHelper
+import file_helper
 from file_info import FileInfo
 
 print(platform.python_version())
 
-# TODO: Check wether new files are in the directory (mtime during running is
-# the the creation time)
-# TODO: Load file names and relevant dates in .csv file
-# TODO: Remove expired files
 # TODO: Create config file
+# TODO: Print statements in log file
 
 directory = "/home/david/Projects/test-share"
 data_file = "/home/david/Projects/test-share/data.csv"
+files_read = []
+files_current = []
 file_infos = []
 
 retention_periods = {
@@ -29,17 +28,24 @@ retention_periods = {
     "od1": -1
 }
 
-file_helper = FileHelper(data_file, retention_periods)
-# file_helper.save_data()
-files = file_helper.get_all_files(directory)
-# print (len(files))
-#
-for file in files:
-    print(file)
-    file_infos.append(FileInfo(
-        file,
-        file_helper.get_creation_time(file),
-        file_helper.get_expiration_time(file)))
+if file_helper.check_file_exists(data_file):
+    file_infos = file_helper.load_data(data_file)
+    for file_info in file_infos:
+        files_read.append(file_info.file)
 
-print(len(file_infos))
-file_helper.save_data(file_infos)
+files_current = file_helper.get_all_files(directory, retention_periods)
+
+for file in files_current:
+    if not files_read or file not in files_read:
+        file_infos.append(FileInfo(
+            file,
+            file_helper.get_creation_time(file),
+            file_helper.get_expiration_time(file, retention_periods)))
+
+file_infos_tmp = file_infos[:]
+
+for file_info in file_infos_tmp:
+    if file_helper.remove_file(file_info):
+        file_infos.remove(file_info)
+
+file_helper.save_data(data_file, file_infos)
