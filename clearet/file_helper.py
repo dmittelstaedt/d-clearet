@@ -4,6 +4,14 @@ import csv
 from file_info import FileInfo
 
 
+def get_absolute_path(current_file, configuration_file):
+    """Return absolute path from current file and relative path
+    to the configuration file
+    """
+    current_path = os.path.abspath(os.path.dirname(current_file))
+    return os.path.join(current_path, configuration_file)
+
+
 def get_all_files(directory, retention_periods):
     """Return all files from given directory"""
     files = []
