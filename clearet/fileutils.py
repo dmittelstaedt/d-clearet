@@ -1,7 +1,5 @@
 import os
 import datetime
-import csv
-from retentionfile import RetentionFile
 
 
 def get_absolute_path(current_file, configuration_file):
@@ -51,14 +49,13 @@ def get_expiration_time(file, retention_periods):
     return dt_ret
 
 
-def remove_file(file_info):
+def remove_file(retention_file):
     """Remove file with given file name"""
     is_removed = False
-    if file_info.expiration_date != -1:
-        time_delta = file_info.expiration_date - datetime.datetime.now()
+    if retention_file.expiration_date != -1:
+        time_delta = retention_file.expiration_date - datetime.datetime.now()
         if time_delta.total_seconds() < 0:
-            print("Removing file: " + file_info.file)
-            os.remove(file_info.file)
+            os.remove(retention_file.file)
             is_removed = True
     return is_removed
 
@@ -66,34 +63,3 @@ def remove_file(file_info):
 def check_file_exists(filename):
     """Check whether given file exists and is not empty"""
     return (os.path.isfile(filename) and os.path.getsize(filename) > 0)
-
-
-def save_data(data_file, file_infos):
-    """Save all files and dates to .csv file"""
-    with open(data_file, "w") as csvfile:
-        writer = csv.writer(csvfile)
-        for file_info in file_infos:
-            writer.writerow([
-                file_info.file,
-                file_info.creation_date,
-                file_info.expiration_date])
-
-
-def load_data(data_file):
-    """Load all files and dates from .csv file"""
-    print("Reading from file")
-    file_infos = []
-    with open(data_file, "r") as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            expiration_date = -1
-            if row[2] != str(expiration_date):
-                expiration_date = datetime.datetime.strptime(
-                    row[2],
-                    "%Y-%m-%d %H:%M:%S.%f")
-            file_infos.append(RetentionFile(
-                row[0],
-                datetime.datetime.strptime(row[1], "%Y-%m-%d %H:%M:%S.%f"),
-                expiration_date
-                ))
-    return file_infos

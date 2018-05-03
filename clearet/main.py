@@ -3,6 +3,7 @@ import logging
 
 import fileutils
 import defaultcfgparser
+import datafileparser
 from retentionfile import RetentionFile
 
 # TODO: Multiple directories in config file
@@ -39,7 +40,7 @@ logging.info("Using retention periods " + str(retention_periods))
 
 if fileutils.check_file_exists(data_file):
     logging.info("Reading files from DataFile")
-    retention_files = fileutils.load_data(data_file)
+    retention_files = datafileparser.load_data(data_file)
     for retention_file in retention_files:
         files_read.append(retention_file.file)
 
@@ -66,4 +67,4 @@ for retention_file in retention_files_tmp:
 
 if is_changed:
     logging.info("Writing files to DataFile")
-    fileutils.save_data(data_file, retention_files)
+    datafileparser.save_data(data_file, retention_files)
