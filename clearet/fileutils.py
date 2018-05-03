@@ -1,7 +1,7 @@
 import os
 import datetime
 import csv
-from file_info import FileInfo
+from retentionfile import RetentionFile
 
 
 def get_absolute_path(current_file, configuration_file):
@@ -93,7 +93,7 @@ def load_data(data_file):
                 expiration_date = datetime.datetime.strptime(
                     row[2],
                     "%Y-%m-%d %H:%M:%S.%f")
-            file_infos.append(FileInfo(
+            file_infos.append(RetentionFile(
                 row[0],
                 datetime.datetime.strptime(row[1], "%Y-%m-%d %H:%M:%S.%f"),
                 expiration_date

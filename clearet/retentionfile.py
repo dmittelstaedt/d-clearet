@@ -1,4 +1,4 @@
-class FileInfo():
+class RetentionFile():
     """This class saves the creation and expiration date of a file."""
 
     def __init__(self, file, creation_date, expiration_date):
