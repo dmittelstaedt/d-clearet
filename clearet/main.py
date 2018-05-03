@@ -1,30 +1,44 @@
 import platform
+import logging
+
 import fileutils
 import defaultcfgparser
 from retentionfile import RetentionFile
 
-print(platform.python_version())
-
-# TODO: Print statements in log file
 # TODO: Multiple directories in config file
 
+log_format = "%(asctime)s %(levelname)s [%(module)s] %(message)s"
 files_read = []
 retention_files = []
 configuration_file = "conf/clearet.ini"
+log_file = "log/clearet.log"
+is_changed = False
 
+log_file_path = fileutils.get_absolute_path(
+    __file__,
+    log_file)
 configuration_file_path = fileutils.get_absolute_path(
     __file__,
     configuration_file)
 
+logging.basicConfig(
+    format=log_format,
+    filename=log_file_path,
+    level=logging.INFO)
+
+logging.info("Running on " + platform.system() + " " + platform.processor())
+logging.info("Using Python " + platform.python_version())
+
 configuration = defaultcfgparser.parse(configuration_file_path)
 data_file = defaultcfgparser.get_data_file(configuration)
+logging.info("Using DataFile " + data_file)
 directory = defaultcfgparser.get_directory(configuration)
+logging.info("Searching files in directory " + directory)
 retention_periods = defaultcfgparser.get_retention_periods(configuration)
-print(data_file)
-print(directory)
-print(retention_periods)
+logging.info("Using retention periods " + str(retention_periods))
 
 if fileutils.check_file_exists(data_file):
+    logging.info("Reading files from DataFile")
     retention_files = fileutils.load_data(data_file)
     for retention_file in retention_files:
         files_read.append(retention_file.file)
@@ -37,11 +51,19 @@ for file in files_current:
             file,
             fileutils.get_creation_time(file),
             fileutils.get_expiration_time(file, retention_periods)))
+        is_changed = True
+        logging.info("Adding new file " + file + " to DataFile")
 
 retention_files_tmp = retention_files[:]
 
 for retention_file in retention_files_tmp:
     if fileutils.remove_file(retention_file):
         retention_files.remove(retention_file)
+        logging.info(
+            "Removing file " + retention_file.file
+            + " from DataFile and directory")
+        is_changed = True
 
-fileutils.save_data(data_file, retention_files)
+if is_changed:
+    logging.info("Writing files to DataFile")
+    fileutils.save_data(data_file, retention_files)

@@ -70,7 +70,6 @@ def check_file_exists(filename):
 
 def save_data(data_file, file_infos):
     """Save all files and dates to .csv file"""
-    print("Writing to file")
     with open(data_file, "w") as csvfile:
         writer = csv.writer(csvfile)
         for file_info in file_infos:
@@ -78,7 +77,6 @@ def save_data(data_file, file_infos):
                 file_info.file,
                 file_info.creation_date,
                 file_info.expiration_date])
-    print("Finished writing to file")
 
 
 def load_data(data_file):
