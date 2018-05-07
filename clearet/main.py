@@ -1,5 +1,6 @@
 import platform
 import logging
+import sys
 
 import fileutils
 import defaultcfgparser
@@ -11,8 +12,8 @@ from retentionfile import RetentionFile
 log_format = "%(asctime)s %(levelname)s [%(module)s] %(message)s"
 files_read = []
 retention_files = []
-configuration_file = "conf/clearet.ini"
-log_file = "log/clearet.log"
+configuration_file = "../conf/clearet.ini"
+log_file = "../log/clearet.log"
 is_changed = False
 
 log_file_path = fileutils.get_absolute_path(
@@ -22,10 +23,14 @@ configuration_file_path = fileutils.get_absolute_path(
     __file__,
     configuration_file)
 
-logging.basicConfig(
-    format=log_format,
-    filename=log_file_path,
-    level=logging.INFO)
+try:
+    logging.basicConfig(
+        format=log_format,
+        filename=log_file_path,
+        level=logging.INFO)
+except OSError:
+    print("Log directory does not exist.")
+    sys.exit(1)
 
 logging.info("Running on " + platform.system() + " " + platform.processor())
 logging.info("Using Python " + platform.python_version())
@@ -68,3 +73,5 @@ for retention_file in retention_files_tmp:
 if is_changed:
     logging.info("Writing files to DataFile")
     datafileparser.save_data(data_file, retention_files)
+
+sys.exit(0)

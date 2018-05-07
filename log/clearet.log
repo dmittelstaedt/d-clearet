@@ -1,0 +1,42 @@
+2018-05-03 15:56:01,398 INFO [main] Running on Linux x86_64
+2018-05-03 15:56:01,399 INFO [main] Using Python 3.5.2
+2018-05-03 15:56:01,400 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-03 15:56:01,400 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-03 15:56:01,400 INFO [main] Using retention periods {'j02': 730, 'j01': 365, 'w02': 14, 'm02': 60, 'm01': 30, 'm04': 120, 'nol': -1, 'm03': 93, 'm18': 540, 'j10': 3650, 'od1': -1, 'm06': 180}
+2018-05-03 15:56:01,400 INFO [main] Reading files from DataFile
+2018-05-07 15:45:28,260 INFO [main] Running on Linux x86_64
+2018-05-07 15:45:28,268 INFO [main] Using Python 3.5.2
+2018-05-07 15:45:28,270 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-07 15:45:28,270 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-07 15:45:28,271 INFO [main] Using retention periods {'m02': 60, 'nol': -1, 'j01': 365, 'm01': 30, 'j10': 3650, 'od1': -1, 'm03': 93, 'w02': 14, 'm04': 120, 'j02': 730, 'm18': 540, 'm06': 180}
+2018-05-07 15:45:28,271 INFO [main] Reading files from DataFile
+2018-05-07 15:59:19,741 INFO [main] Running on Linux x86_64
+2018-05-07 15:59:19,741 INFO [main] Using Python 3.5.2
+2018-05-07 15:59:19,742 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-07 15:59:19,742 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-07 15:59:19,742 INFO [main] Using retention periods {'od1': -1, 'nol': -1, 'm03': 93, 'm01': 30, 'j02': 730, 'm18': 540, 'w02': 14, 'm02': 60, 'm04': 120, 'j10': 3650, 'm06': 180, 'j01': 365}
+2018-05-07 15:59:19,742 INFO [main] Reading files from DataFile
+2018-05-07 16:10:18,256 INFO [main] Running on Linux x86_64
+2018-05-07 16:10:18,256 INFO [main] Using Python 3.5.2
+2018-05-07 16:10:18,257 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-07 16:10:18,257 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-07 16:10:18,257 INFO [main] Using retention periods {'m01': 30, 'm18': 540, 'w02': 14, 'od1': -1, 'nol': -1, 'j01': 365, 'j10': 3650, 'm06': 180, 'm03': 93, 'm04': 120, 'm02': 60, 'j02': 730}
+2018-05-07 16:10:18,257 INFO [main] Reading files from DataFile
+2018-05-07 16:10:32,289 INFO [main] Running on Linux x86_64
+2018-05-07 16:10:32,289 INFO [main] Using Python 3.5.2
+2018-05-07 16:10:32,290 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-07 16:10:32,290 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-07 16:10:32,290 INFO [main] Using retention periods {'m03': 93, 'm01': 30, 'j10': 3650, 'm04': 120, 'w02': 14, 'od1': -1, 'j01': 365, 'm02': 60, 'm18': 540, 'm06': 180, 'j02': 730, 'nol': -1}
+2018-05-07 16:10:32,290 INFO [main] Reading files from DataFile
+2018-05-07 16:22:14,993 INFO [main] Running on Linux x86_64
+2018-05-07 16:22:14,993 INFO [main] Using Python 3.5.2
+2018-05-07 16:22:14,994 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-07 16:22:14,994 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-07 16:22:14,994 INFO [main] Using retention periods {'od1': -1, 'w02': 14, 'm01': 30, 'nol': -1, 'm06': 180, 'j10': 3650, 'm04': 120, 'm18': 540, 'm03': 93, 'm02': 60, 'j02': 730, 'j01': 365}
+2018-05-07 16:22:14,994 INFO [main] Reading files from DataFile
+2018-05-07 16:22:52,402 INFO [main] Running on Linux x86_64
+2018-05-07 16:22:52,402 INFO [main] Using Python 3.5.2
+2018-05-07 16:22:52,403 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
+2018-05-07 16:22:52,403 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-05-07 16:22:52,403 INFO [main] Using retention periods {'m04': 120, 'nol': -1, 'w02': 14, 'm02': 60, 'm06': 180, 'j02': 730, 'm01': 30, 'j01': 365, 'm18': 540, 'm03': 93, 'j10': 3650, 'od1': -1}
+2018-05-07 16:22:52,403 INFO [main] Reading files from DataFile

@@ -1,0 +1,4 @@
+#!/bin/bash
+directory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+python3 $directory/clearet/main.py
+exit $?

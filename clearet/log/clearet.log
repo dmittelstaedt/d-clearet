@@ -1,6 +1,0 @@
-2018-05-03 15:56:01,398 INFO [main] Running on Linux x86_64
-2018-05-03 15:56:01,399 INFO [main] Using Python 3.5.2
-2018-05-03 15:56:01,400 INFO [main] Using DataFile /home/david/Projects/test-share/data.csv
-2018-05-03 15:56:01,400 INFO [main] Searching files in directory /home/david/Projects/test-share
-2018-05-03 15:56:01,400 INFO [main] Using retention periods {'j02': 730, 'j01': 365, 'w02': 14, 'm02': 60, 'm01': 30, 'm04': 120, 'nol': -1, 'm03': 93, 'm18': 540, 'j10': 3650, 'od1': -1, 'm06': 180}
-2018-05-03 15:56:01,400 INFO [main] Reading files from DataFile
