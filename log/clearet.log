@@ -40,3 +40,47 @@
 2018-05-07 16:22:52,403 INFO [main] Searching files in directory /home/david/Projects/test-share
 2018-05-07 16:22:52,403 INFO [main] Using retention periods {'m04': 120, 'nol': -1, 'w02': 14, 'm02': 60, 'm06': 180, 'j02': 730, 'm01': 30, 'j01': 365, 'm18': 540, 'm03': 93, 'j10': 3650, 'od1': -1}
 2018-05-07 16:22:52,403 INFO [main] Reading files from DataFile
+2018-06-05 13:40:17,384 INFO [main] Running on Linux x86_64
+2018-06-05 13:40:17,385 INFO [main] Using Python 3.5.2
+2018-06-05 13:40:17,387 INFO [main] Using DataFile /home/david/Projects/d-clearet/var/data.csv
+2018-06-05 13:40:17,387 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-06-05 13:40:17,388 INFO [main] Using retention periods {'nol': -1, 'm18': 540, 'j10': 3650, 'm02': 60, 'j01': 365, 'm03': 93, 'w02': 14, 'od1': -1, 'm04': 120, 'm01': 30, 'm06': 180, 'j02': 730}
+2018-06-05 13:40:17,399 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.m18 to DataFile
+2018-06-05 13:40:17,399 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.od1 to DataFile
+2018-06-05 13:40:17,400 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.m01 to DataFile
+2018-06-05 13:40:17,400 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.nol to DataFile
+2018-06-05 13:40:17,400 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.j01 to DataFile
+2018-06-05 13:40:17,401 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.w02 to DataFile
+2018-06-05 13:40:17,401 INFO [main] Adding new file /home/david/Projects/test-share/a0/wrk/A2013.PIPP--01.W01.A1803.SC5AD86.m06 to DataFile
+2018-06-05 13:40:17,401 INFO [main] Adding new file /home/david/Projects/test-share/a1/wrk/B2013.PIPP--01.W01.A1803.SC5AD86.w02 to DataFile
+2018-06-05 13:40:17,402 INFO [main] Writing files to DataFile
+2018-06-05 13:45:41,898 INFO [main] Running on Linux x86_64
+2018-06-05 13:45:41,899 INFO [main] Using Python 3.5.2
+2018-06-05 13:45:41,900 INFO [main] Using DataFile /home/david/Projects/d-clearet/var/data.csv
+2018-06-05 13:45:41,900 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-06-05 13:45:41,900 INFO [main] Using retention periods {'j10': 3650, 'w02': 14, 'm02': 60, 'nol': -1, 'm18': 540, 'm01': 30, 'j01': 365, 'm03': 93, 'm04': 120, 'od1': -1, 'm06': 180, 'j02': 730}
+2018-06-05 13:45:41,900 INFO [main] Reading files from DataFile
+2018-06-05 13:46:34,096 INFO [main] Running on Linux x86_64
+2018-06-05 13:46:34,096 INFO [main] Using Python 3.5.2
+2018-06-05 13:46:34,097 INFO [main] Using DataFile /home/david/Projects/d-clearet/var/data.csv
+2018-06-05 13:46:34,097 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-06-05 13:46:34,097 INFO [main] Using retention periods {'j02': 730, 'od1': -1, 'm04': 120, 'm03': 93, 'm01': 30, 'nol': -1, 'm06': 180, 'm18': 540, 'j01': 365, 'w02': 14, 'm02': 60, 'j10': 3650}
+2018-06-05 13:46:34,097 INFO [main] Reading files from DataFile
+2018-06-05 13:46:59,523 INFO [main] Running on Linux x86_64
+2018-06-05 13:46:59,524 INFO [main] Using Python 3.5.2
+2018-06-05 13:46:59,524 INFO [main] Using DataFile /home/david/Projects/d-clearet/var/data.csv
+2018-06-05 13:46:59,524 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-06-05 13:46:59,525 INFO [main] Using retention periods {'w02': 14, 'j10': 3650, 'm18': 540, 'm06': 180, 'nol': -1, 'od1': -1, 'j02': 730, 'm03': 93, 'm01': 30, 'j01': 365, 'm04': 120, 'm02': 60}
+2018-06-05 13:46:59,525 INFO [main] Reading files from DataFile
+2018-06-05 13:47:38,594 INFO [main] Running on Linux x86_64
+2018-06-05 13:47:38,595 INFO [main] Using Python 3.5.2
+2018-06-05 13:47:38,596 INFO [main] Using DataFile /home/david/Projects/d-clearet/var/data.csv
+2018-06-05 13:47:38,596 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-06-05 13:47:38,597 INFO [main] Using retention periods {'od1': -1, 'w02': 14, 'm06': 180, 'm02': 60, 'm04': 120, 'j02': 730, 'm03': 93, 'nol': -1, 'j10': 3650, 'j01': 365, 'm01': 30, 'm18': 540}
+2018-06-05 13:47:38,598 INFO [main] Reading files from DataFile
+2018-06-05 13:47:49,686 INFO [main] Running on Linux x86_64
+2018-06-05 13:47:49,687 INFO [main] Using Python 3.5.2
+2018-06-05 13:47:49,687 INFO [main] Using DataFile /home/david/Projects/d-clearet/var/data.csv
+2018-06-05 13:47:49,687 INFO [main] Searching files in directory /home/david/Projects/test-share
+2018-06-05 13:47:49,688 INFO [main] Using retention periods {'od1': -1, 'j02': 730, 'm18': 540, 'm04': 120, 'm06': 180, 'm02': 60, 'nol': -1, 'm01': 30, 'w02': 14, 'm03': 93, 'j10': 3650, 'j01': 365}
+2018-06-05 13:47:49,688 INFO [main] Reading files from DataFile

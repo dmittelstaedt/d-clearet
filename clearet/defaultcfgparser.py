@@ -20,6 +20,12 @@ def get_directory(configuration):
     return directory['directory']
 
 
+def get_retention_time(configuration):
+    """Returns the retention time for prt files from configuration file"""
+    prt_retention_time = configuration['prt_retention_time']
+    return int(prt_retention_time['duration'])
+
+
 def get_retention_periods(configuration):
     """Get retention periods from parsed configuration"""
     retention_periods = {}

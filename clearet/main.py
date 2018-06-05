@@ -7,7 +7,11 @@ import defaultcfgparser
 import datafileparser
 from retentionfile import RetentionFile
 
+# TODO: Remove files in prt-directories from timestamp
 # TODO: Multiple directories in config file
+# TODO: Possibility for a dry-run
+# TODO: Exception Handling
+# TODO: Check if directory for data exists
 
 log_format = "%(asctime)s %(levelname)s [%(module)s] %(message)s"
 files_read = []
