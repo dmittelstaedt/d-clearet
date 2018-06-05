@@ -10,6 +10,17 @@ def get_absolute_path(current_file, configuration_file):
     return os.path.join(current_path, configuration_file)
 
 
+def get_directories(root_directory):
+    """Return directories which contain either prt or wrk directory."""
+    directories = []
+    for root, dirs, files in os.walk(root_directory):
+        for dir in dirs:
+            if dir == 'prt' or dir == "wrk":
+                directories.append(os.path.join(root, dir))
+    return directories
+
+
+# TODO: Rename to get_wrk_files
 def get_all_files(directory, retention_periods):
     """Return all files from given directory"""
     files = []
@@ -19,6 +30,23 @@ def get_all_files(directory, retention_periods):
             retention_period = get_retention_period(file)
             if retention_period in retention_periods:
                 files.append(file)
+    return files
+
+
+def get_all_prt_files(directory):
+    """Return all print files from given directory"""
+    prt_directories = []
+    files = []
+    for root, dirs, filenames in os.walk(directory):
+        for dir in dirs:
+            if 'prt' == dir:
+                prt_directories.append(os.path.join(root, dir))
+    # for prt_directory in prt_directories:
+    #     prt_files = os.listdir(prt_directory)
+    #     for prt_file in prt_files:
+    #         prt_file_path = os.path.join(prt_directory, prt_file)
+    #         if check_file_exists(prt_file_path):
+    #             files.append(prt_file_path)
     return files
 
 
@@ -33,6 +61,7 @@ def get_creation_time(file):
     return datetime.datetime.fromtimestamp(os.path.getmtime(file))
 
 
+# TODO: Don't return None
 def get_expiration_time(file, retention_periods):
     """Return the calculated resting time from file name"""
     ret_period = get_retention_period(file)

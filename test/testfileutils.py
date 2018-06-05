@@ -29,6 +29,12 @@ class TestFileUtils(unittest.TestCase):
     def test_check_file_exists(self):
         self.assertTrue(fileutils.check_file_exists(__file__))
 
+    def test_get_all_prt_files(self):
+        prt_files = fileutils.get_directories(
+            "/home/david/Projects/test-share")
+        for prt_file in prt_files:
+            print(prt_file)
+
     @classmethod
     def tearDownClass(cls):
         print("End")
