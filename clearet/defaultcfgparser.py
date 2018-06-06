@@ -29,7 +29,7 @@ def get_retention_time(configuration):
 def get_retention_periods(configuration):
     """Get retention periods from parsed configuration"""
     retention_periods = {}
-    retention = configuration['retention']
+    retention = configuration['wrk_retention_period']
     for key in retention:
         retention_periods[key] = int(retention[key])
     return retention_periods

@@ -44,6 +44,8 @@ data_file = defaultcfgparser.get_data_file(configuration)
 logging.info("Using DataFile " + data_file)
 directory = defaultcfgparser.get_directory(configuration)
 logging.info("Searching files in directory " + directory)
+duration = defaultcfgparser.get_retention_time(configuration)
+logging.info("Using retention time: " + str(duration))
 retention_periods = defaultcfgparser.get_retention_periods(configuration)
 logging.info("Using retention periods " + str(retention_periods))
 
@@ -53,14 +55,25 @@ if fileutils.check_file_exists(data_file):
     for retention_file in retention_files:
         files_read.append(retention_file.file)
 
-files_current = fileutils.get_all_files(directory, retention_periods)
+prt_directories, wrk_directories = fileutils.get_directories(directory)
+prt_files = fileutils.get_prt_files(prt_directories)
+wrk_files = fileutils.get_wrk_files(wrk_directories, retention_periods)
+files_current = prt_files + wrk_files
 
 for file in files_current:
     if not files_read or file not in files_read:
-        retention_files.append(RetentionFile(
-            file,
-            fileutils.get_creation_time(file),
-            fileutils.get_expiration_time(file, retention_periods)))
+        if file in prt_files:
+            retention_files.append(RetentionFile(
+                file,
+                fileutils.get_creation_time(file),
+                fileutils.get_expiration_time(file, duration=duration)))
+        else:
+            retention_files.append(RetentionFile(
+                file,
+                fileutils.get_creation_time(file),
+                fileutils.get_expiration_time(
+                    file,
+                    retention_periods=retention_periods)))
         is_changed = True
         logging.info("Adding new file " + file + " to DataFile")
 
