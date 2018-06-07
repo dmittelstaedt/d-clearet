@@ -5,7 +5,7 @@ from controller import Controller
 import fileutils
 
 # TODO: Possibility for a dry-run with argument from command line
-# TODO: Check right values in ini-file
+# TODO: Check if ini-file exists and have right values
 # TODO: Multiple directories in config file
 # TODO: Exception Handling
 # TODO: Check if directory for data exists
