@@ -59,6 +59,16 @@ class Controller():
         wrk_files = fileutils.get_wrk_files(wrk_directories, retention_periods)
         files_current = prt_files + wrk_files
 
+        # Removing files from data file, which were removed manually since
+        # the last run
+        for retention_file in retention_files:
+            if retention_file.file not in files_current:
+                retention_files.remove(retention_file)
+                is_changed = True
+                logging.info("File " + retention_file.file + " was removed"
+                             " manually. Removing file " + retention_file.file
+                             + " from DataFile")
+
         # Create retention file instances for found print and work files.
         # All instances are saved in the same list.
         for file in files_current:

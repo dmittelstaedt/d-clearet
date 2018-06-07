@@ -4,7 +4,6 @@ import sys
 from controller import Controller
 import fileutils
 
-# TODO: Rewrite data file if file was removed manually
 # TODO: Possibility for a dry-run with argument from command line
 # TODO: Check right values in ini-file
 # TODO: Multiple directories in config file
