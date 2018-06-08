@@ -18,8 +18,20 @@ Features
 - Loading all files from a given CSV-file.
 - Removing all print and work files based on their time stamp or retention period.
 
+System Requirements
+--------------
+
+- Python 3 has to be installed on the target system.
+
+Installation
+--------------
+
+- Clone the repository and checkout the stable branch.
+- Run the installation script install.sh from the bin directory. This script checks the necessary requirements, installs the tool and runs some tests.
+
 Usage
 --------------
 
-- Python 3 has to be installed on the system.
-- Execute the Shell script located in the binary directory.
+- Configure the tool with the configuration file from the conf directory. This file is in INI-format. The directory, where the tool searches the files, the file, where the information to the found files will be hold, the retention time for print files and the retention time for work files can be configured.
+- Run the script clearet from the bin directory to start this tool.
+- The output goes in a log file, which is located in the ./log directory.
