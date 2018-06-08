@@ -29,6 +29,11 @@ class Controller():
         retention_files = []
         is_changed = False
 
+        # Initial Logging with infos of the platform and python version
+        logging.info("Running on " + platform.system() + " "
+                     + platform.processor())
+        logging.info("Using Python " + platform.python_version())
+
         # Load configuration from file
         configuration = defaultcfgparser.parse(self.configuration_file)
         data_file = defaultcfgparser.get_data_file(configuration)
@@ -37,10 +42,11 @@ class Controller():
         retention_periods = defaultcfgparser.get_retention_periods(
             configuration)
 
+        if not fileutils.check_directory_of_file(data_file):
+            logging.error("DataFile " + data_file + " does not exist.")
+            raise OSError
+
         # Initial Logging with infos from the configuration file
-        logging.info("Running on " + platform.system() + " "
-                     + platform.processor())
-        logging.info("Using Python " + platform.python_version())
         logging.info("Using DataFile " + data_file)
         logging.info("Searching files in directory " + directory)
         logging.info("Using retention time: " + str(duration))

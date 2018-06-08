@@ -96,3 +96,11 @@ def remove_file(retention_file):
 def check_file_exists(filename):
     """Check whether given file exists and is not empty"""
     return (os.path.isfile(filename) and os.path.getsize(filename) > 0)
+
+
+def check_directory_of_file(filename):
+    """Check wether given directory of file exists. Returns true if
+    directory exists otherwise false.
+    """
+    directory = os.path.dirname(filename)
+    return (os.path.isdir(directory))
