@@ -101,6 +101,10 @@ class TestFileUtils(unittest.TestCase):
             datetime.timedelta(days=+14)
         self.assertEqual(expected_wrk_expt_time, wrk_exp_time)
 
+    def test_get_path_from_file(self):
+        file = "tmp/a0/lib/test-prog.jar"
+        self.assertTrue(fileutils.check_directory_of_file(file))
+
     @classmethod
     def tearDownClass(cls):
         """Remove the created base directory for simulating the needed
