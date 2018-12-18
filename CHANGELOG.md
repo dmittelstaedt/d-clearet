@@ -28,4 +28,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Execption handling for non existent data file directory
 
 [Unreleased]: https://github.com/dmittelstaedt/d-clearet
-[0.0.1]:
+[0.0.1]: https://github.com/dmittelstaedt/d-clearet/tree/v0.0.1
